@@ -1,3 +1,5 @@
+@version 0.0.1
+
 public class Contact {
     public Integer ID;
     public String firstName;

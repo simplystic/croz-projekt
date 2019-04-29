@@ -1,4 +1,11 @@
-@version 0.0.1
+/** 
+ * @author Ivan Simurina 
+ * 
+ * @version 0.0.1-19.04.29
+ * 
+ */
+package hr.hrc.croz.phonebook;
+
 
 public class Contact {
     public Integer ID;

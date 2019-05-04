@@ -104,7 +104,6 @@ public class Contact {
 	public void setAddressID(Integer addressID) {
 		this.addressID = addressID;
 	}
-
 	
 	/**
 	 * Contact class constructor
@@ -143,8 +142,21 @@ public class Contact {
 		this.sexID = new Integer(1); // default male
 		this.addressID = new Integer(0);
 		this.sex = new Sex(this.getSexID());
-	}
+	}	
 	
+	@Override
+	public String toString() {
+		String output = new String(
+		    	"Contact ID: " + this.getID() + "\n" +
+		    	"Contact's first name: " + this.getFirstName() + "\n" + 
+		    	"Contact's last name: " + this.getLastName() + "\n" + 
+		    	"Contact's phone number: " + this.getPhone() + "\n" +
+		    	"Contact's e-mail: " + this.getEmail() + "\n" +
+		    	"Contact's address ID: " + this.getAddressID() + "\n" +
+		    	"Contact's sex: " + this.sex.getSexName()
+			);		
+		return output;
+	}
 	
 	public static void main(String[] args) {
 		Contact contact = new Contact();		
@@ -181,30 +193,18 @@ public class Contact {
 	    	// Contact's sex ID
 	    	System.out.print("Enter contact's sex ID (1 for male, 2 for female): ");
 	    	Integer sexID = scanner.nextInt();
-	    	contact.setSexID(sexID);
-	    	
+	    	contact.setSexID(sexID);	    	
 	    	
 	    	// Contact's address ID
 	    	System.out.print("Enter contact's address ID: ");
 	    	Integer addressID = scanner.nextInt();
-	    	contact.setAddressID(addressID);	    	
-	    	
-
-	    	
+	    	contact.setAddressID(addressID);	
 	    	
 	    	// Print contact's info to screen:
 	    	System.out.println("-------------------------------------------------");
-	    	System.out.println("Contact ID: " + contact.getID());
-	    	System.out.println("Contact's first name: " + contact.getFirstName());
-	    	System.out.println("Contact's last name: " + contact.getLastName());
-	    	System.out.println("Contact's phone number: " + contact.getPhone());
-	    	System.out.println("Contact's e-mail: " + contact.getEmail());
-	    	System.out.println("Contact's address ID: " + contact.getAddressID());
-	    	System.out.println("Contact's sex: " + contact.sex.getSexName());
+	    	System.out.println(contact);
 	    	
 	    	doLoop = false;
-		}
-		
-	
+		}	
 	}
 }

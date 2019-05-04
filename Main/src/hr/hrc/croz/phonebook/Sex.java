@@ -5,7 +5,8 @@ public class Sex {
 	 * 1 == Male
 	 * 2 == Female (can also be any other number excluding 1)
 	 */
-	private Integer ID; // 
+	private Integer ID; 
+	
 	/**
 	 * "Male" or "Female"
 	 */
@@ -36,8 +37,7 @@ public class Sex {
 			this.sexName = new String("Female");
 		}
 	}
-
-		
+			
 	/**
 	 * @param iD sex ID, 1 for male, >=2 for female
 	 */

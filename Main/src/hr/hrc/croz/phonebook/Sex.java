@@ -1,3 +1,8 @@
+/** 
+ * @author Ivan Simurina 
+ * 
+ * @version 0.0.1-05.05.19
+ */
 package hr.hrc.croz.phonebook;
 
 public class Sex {
@@ -52,12 +57,15 @@ public class Sex {
 	 */
 	@Override
 	public String toString() {
+		String output = new String("Female");
 		if (ID.equals(1)) {
-			System.out.print("Male");
-		} else {
-			System.out.print("Female");
-		}
-		System.out.println();
-		return super.toString();
+			output = new String("Male");
+		}		
+		return output;
+	}
+	
+	public static void main(String[] args) {
+		Sex sex = new Sex(2);
+		System.out.println(sex);
 	}
 }

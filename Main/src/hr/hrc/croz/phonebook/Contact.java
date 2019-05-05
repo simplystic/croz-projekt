@@ -1,11 +1,11 @@
 /** 
  * @author Ivan Simurina 
  * 
- * @version 0.0.1-04.05.29
- * 
+ * @version 0.0.1-05.05.19
  */
 package hr.hrc.croz.phonebook;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Contact {
@@ -15,10 +15,11 @@ public class Contact {
     private String phone;
     private String email;
     private Integer sexID;
-    private Integer addressID;
     private Sex sex;
-    
+    private Integer addressID;
+    private Address address;    
 	private static Scanner scanner;
+	
 	/**
 	 * @return the iD
 	 */
@@ -103,7 +104,24 @@ public class Contact {
 	 */
 	public void setAddressID(Integer addressID) {
 		this.addressID = addressID;
+		this.address.setID(addressID);
 	}
+	
+	/**
+	 * Default Contact class constructor
+	 */
+	public Contact() {
+		super();
+		this.ID = 0;
+		this.firstName = new String("John");
+		this.lastName = new String("Doe");
+		this.phone = new String("0987654321");
+		this.email = new String("john.doe@protonmail.com");
+		this.sexID = new Integer(1); // default male
+		this.sex = new Sex(this.getSexID());
+		this.addressID = new Integer(0);
+		this.address = new Address(addressID);
+	}	
 	
 	/**
 	 * Contact class constructor
@@ -126,24 +144,13 @@ public class Contact {
 		this.email = email;
 		this.sexID = sexID;
 		this.addressID = addressID;
+		this.address = new Address();
 		this.sex = new Sex(this.getSexID());
 	}
-	
+
 	/**
-	 * Default Contact class constructor
+	 * Prints whole contact's info to string.
 	 */
-	public Contact() {
-		super();
-		this.ID = 0;
-		this.firstName = new String("John");
-		this.lastName = new String("Doe");
-		this.phone = new String("0987654321");
-		this.email = new String("john.doe@protonmail.com");
-		this.sexID = new Integer(1); // default male
-		this.addressID = new Integer(0);
-		this.sex = new Sex(this.getSexID());
-	}	
-	
 	@Override
 	public String toString() {
 		String output = new String(
@@ -152,8 +159,15 @@ public class Contact {
 		    	"Contact's last name: " + this.getLastName() + "\n" + 
 		    	"Contact's phone number: " + this.getPhone() + "\n" +
 		    	"Contact's e-mail: " + this.getEmail() + "\n" +
-		    	"Contact's address ID: " + this.getAddressID() + "\n" +
-		    	"Contact's sex: " + this.sex.getSexName()
+		    	"Contact's sex: " + this.sex.getSexName() + "\n" +
+		    	"--------------------------- \n" +
+		    	"| Contact's ADDRESS info: | \n" +
+		    	"--------------------------- \n" +
+		    	this.address + "\n" +
+		    	"------------------------ \n" + 
+		    	"| Contact's CITY info: | \n" +
+		    	"------------------------ \n" + 
+		    	this.address.getCity()
 			);		
 		return output;
 	}
@@ -167,40 +181,52 @@ public class Contact {
 			// Contact's ID
 			System.out.print("Enter contact ID: ");
 	    	scanner = new Scanner(System.in);
-			int contactID = scanner.nextInt();
-	    	contact.setID(contactID);	    	
+	    	contact.setID(Integer.parseInt(scanner.nextLine()));	    	
 	    		    	
 	    	// Contact's first name
 	    	System.out.print("Enter contact's first name: ");
-	    	String firstName = scanner.next();
-	    	contact.setFirstName(firstName);	    	
+	    	contact.setFirstName(scanner.nextLine());	    	
 	    		    	
 	    	// Contact's last name
 	    	System.out.print("Enter contact's last name: ");
-	    	String lastName = scanner.next();
-	    	contact.setLastName(lastName);	    	
+	    	contact.setLastName(scanner.nextLine());	    	
 	    		    	
 	    	// Contact's phone number
 	    	System.out.print("Enter contact's phone number: ");
-	    	String phone = scanner.next();
-	    	contact.setPhone(phone);
+	    	contact.setPhone(scanner.nextLine());
 	    	
 	    	// Contact's e-mail
 	    	System.out.print("Enter contact's e-mail: ");
-	    	String email = scanner.next();
-	    	contact.setEmail(email);
+	    	contact.setEmail(scanner.nextLine());
 	    	
 	    	// Contact's sex ID
 	    	System.out.print("Enter contact's sex ID (1 for male, 2 for female): ");
-	    	Integer sexID = scanner.nextInt();
-	    	contact.setSexID(sexID);	    	
+	    	contact.setSexID(Integer.parseInt(scanner.nextLine()));	    	
 	    	
 	    	// Contact's address ID
 	    	System.out.print("Enter contact's address ID: ");
-	    	Integer addressID = scanner.nextInt();
-	    	contact.setAddressID(addressID);	
+	    	contact.setAddressID(Integer.parseInt(scanner.nextLine()));	
 	    	
-	    	// Print contact's info to screen:
+	    	// Contact's address street name
+	    	System.out.print("Enter contact's street name: ");	    	
+	    	contact.address.setStreetName(scanner.nextLine());
+	    	
+	    	// Contact's address street number
+	    	System.out.print("Enter contact's street number: ");
+	    	contact.address.setStreetNumber(scanner.nextLine());
+	    	
+	    	// Contact's address city ID
+	    	System.out.print("Enter contact's city ID: ");
+	    	contact.address.setCityID(Integer.parseInt(scanner.nextLine()));
+	    	
+	    	
+	    	
+	    	
+	    	// ****************************************************************** //
+	    	// *           Print contact's info to screen:						* //
+	    	// ****************************************************************** //
+	    	System.out.println("-------------------------------------------------");
+	    	System.out.println("|           CONTACT'S INFO                      |");
 	    	System.out.println("-------------------------------------------------");
 	    	System.out.println(contact);
 	    	

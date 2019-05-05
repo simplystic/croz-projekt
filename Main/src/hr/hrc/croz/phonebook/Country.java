@@ -1,6 +1,5 @@
 /** 
  * @author Ivan Simurina 
- * 
  * @version 0.0.1-05.05.19
  */
 package hr.hrc.croz.phonebook;

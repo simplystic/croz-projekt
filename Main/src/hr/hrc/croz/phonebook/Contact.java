@@ -1,14 +1,13 @@
 /** 
  * @author Ivan Simurina 
- * 
  * @version 0.0.1-05.05.19
  */
 package hr.hrc.croz.phonebook;
 
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class Contact {
+	
     private Integer ID;
     private String firstName;
     private String lastName;
@@ -26,72 +25,84 @@ public class Contact {
 	public Integer getID() {
 		return ID;
 	}
+	
 	/**
 	 * @return the firstName
 	 */
 	public String getFirstName() {
 		return firstName;
 	}
+	
 	/**
 	 * @return the lastName
 	 */
 	public String getLastName() {
 		return lastName;
 	}
+	
 	/**
 	 * @return the phone
 	 */
 	public String getPhone() {
 		return phone;
 	}
+	
 	/**
 	 * @return the email
 	 */
 	public String getEmail() {
 		return email;
 	}
+	
 	/**
 	 * @return the sexID
 	 */
 	public Integer getSexID() {
 		return sexID;
 	}
+	
 	/**
 	 * @return the addressID
 	 */
 	public Integer getAddressID() {
 		return addressID;
 	}
+	
 	/**
 	 * @param iD the iD to set
 	 */
 	public void setID(Integer iD) {
 		ID = iD;
 	}
+	
 	/**
 	 * @param firstName the firstName to set
 	 */
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+	
 	/**
 	 * @param lastName the lastName to set
 	 */
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
 	/**
 	 * @param phone the phone to set
 	 */
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	
 	/**
 	 * @param email the email to set
 	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
 	/**
 	 * @param sexID the sexID to set
 	 */
@@ -99,6 +110,7 @@ public class Contact {
 		this.sexID = sexID;
 		this.sex.setID(sexID);
 	}
+	
 	/**
 	 * @param addressID the addressID to set
 	 */
@@ -217,10 +229,7 @@ public class Contact {
 	    	
 	    	// Contact's address city ID
 	    	System.out.print("Enter contact's city ID: ");
-	    	contact.address.setCityID(Integer.parseInt(scanner.nextLine()));
-	    	
-	    	
-	    	
+	    	contact.address.setCityID(Integer.parseInt(scanner.nextLine())); 	
 	    	
 	    	// ****************************************************************** //
 	    	// *           Print contact's info to screen:						* //

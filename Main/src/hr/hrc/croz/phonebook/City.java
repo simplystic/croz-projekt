@@ -1,6 +1,5 @@
 /** 
  * @author Ivan Simurina 
- * 
  * @version 0.0.1-05.05.19
  */
 package hr.hrc.croz.phonebook;
@@ -11,18 +10,21 @@ public class City {
 	private String zip;
 	private Integer countryID;
 	private Country country;	
+	
 	/**
 	 * @return the iD City's ID 
 	 */
 	public Integer getID() {
 		return ID;
 	}
+	
 	/**
 	 * @return the name City's name
 	 */
 	public String getName() {
 		return name;
 	}
+	
 	/**
 	 * @return the zip City's ZIP code.
 	 */
@@ -35,12 +37,14 @@ public class City {
 	public Integer getCountryID() {
 		return countryID;
 	}
+	
 	/**
 	 * @return country Country class that belong to this city.
 	 */	
 	public Country getCountry() {
 		return this.country;
 	}	
+	
 	/**
 	 * @param iD City ID to set  
 	 */
@@ -58,12 +62,14 @@ public class City {
 			this.country = new Country(385);
 		}
 	}
+	
 	/**
 	 * @param name the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	/**
 	 * @param zip the zip to set
 	 */
@@ -125,7 +131,7 @@ public class City {
 			);
 		return output;
 	}
-
+	
 	public static void main(String[] args) {
 		City city = new City(10000);
 		System.out.println(city);

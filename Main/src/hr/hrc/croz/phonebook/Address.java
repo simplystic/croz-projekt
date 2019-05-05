@@ -1,6 +1,5 @@
 /** 
- * @author Ivan Simurina 
- * 
+ * @author Ivan Simurina  
  * @version 0.0.1-05.05.19
  */
 package hr.hrc.croz.phonebook;
@@ -84,7 +83,7 @@ public class Address {
 	}
 	
 	/**
-	 * Default constructor. Sets default parameters.
+	 * Default constructor. Sets default information.
 	 */
 	public Address() {
 		super();
@@ -113,7 +112,7 @@ public class Address {
 	}
 	
 	/**
-	 * Constructor.
+	 * Constructor. Creates object using address ID.
 	 * 
 	 * @param addressID Address ID
 	 */
